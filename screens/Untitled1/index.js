@@ -1,20 +1,16 @@
-import { View } from "react-native"
-import { Text } from "react-native"
-import { TextInput } from "react-native"
-import React, { useState } from "react"
-import { StyleSheet, ScrollView, SafeAreaView } from "react-native"
+import { Text } from "react-native";
+import { TextInput } from "react-native";
+import React from "react";
+import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
 
 const Untitled1 = () => {
-  return (
-    <SafeAreaView style={styles.safeArea}>
-      <ScrollView
-        contentContainerStyle={{
-          backgroundColor: "#f0f0f1",
-          padding: 10,
-          position: "relative",
-          flex: 1
-        }}
-      >
+  return <SafeAreaView style={styles.safeArea}>
+      <ScrollView contentContainerStyle={{
+      backgroundColor: "#f0f0f1",
+      padding: 10,
+      position: "relative",
+      flex: 1
+    }}>
         <Text style={styles.uxjTSOXq}>Title</Text>
         <TextInput style={styles.OJhIZYkw}></TextInput>
         <Text style={styles.SPMGQgmK}>Body</Text>
@@ -23,13 +19,10 @@ const Untitled1 = () => {
         <TextInput style={styles.rNTEuKVc}></TextInput>
         <Text style={styles.FbCwlETk}>Image</Text>
         <TextInput style={styles.pJSFSYvC}></TextInput>
-        <View style={styles.ywIjYjOK}>
-          <Text style={styles.iHYojExH}>Save</Text>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  )
-}
+        
+      <Text style={styles.guafnFOE}>Save</Text></ScrollView>
+    </SafeAreaView>;
+};
 
 const styles = StyleSheet.create({
   safeArea: {
@@ -111,6 +104,14 @@ const styles = StyleSheet.create({
     fontSize: 14,
     borderRadius: 0,
     textAlign: "center"
+  },
+  guafnFOE: {
+    width: 333,
+    height: 50,
+    lineHeight: 50,
+    fontSize: 14,
+    borderRadius: 0,
+    textAlign: "center"
   }
-})
-export default Untitled1
+});
+export default Untitled1;
