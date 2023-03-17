@@ -1,9 +1,15 @@
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Text } from "react-native";
 import { TextInput } from "react-native";
 import React from "react";
 import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
 
 const Untitled1 = () => {
+  const {
+    entities: article
+  } = useSelector(state => state.article);
+  const [localBody, setLocalBody] = useState(article.body);
   return <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={{
       backgroundColor: "#f0f0f1",
@@ -14,7 +20,7 @@ const Untitled1 = () => {
         <Text style={styles.uxjTSOXq}>Title</Text>
         <TextInput style={styles.OJhIZYkw}></TextInput>
         <Text style={styles.SPMGQgmK}>Body</Text>
-        <TextInput style={styles.cBJjmzTC}></TextInput>
+        <TextInput style={styles.cBJjmzTC} value={localBody}></TextInput>
         <Text style={styles.pbUIzBKw}>Author</Text>
         <TextInput style={styles.rNTEuKVc}></TextInput>
         <Text style={styles.FbCwlETk}>Image</Text>
