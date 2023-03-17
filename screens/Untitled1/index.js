@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import { View } from "react-native";
 import { Text } from "react-native";
 import { TextInput } from "react-native";
@@ -5,14 +6,18 @@ import React from "react";
 import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
 
 const Untitled1 = () => {
+  const {
+    entities: article
+  } = useSelector(state => state.article);
   return <SafeAreaView style={styles.safeArea}>
         <ScrollView contentContainerStyle={{
       backgroundColor: '#f0f0f1',
       padding: 10,
       position: 'relative',
       flex: 1
-    }}><Text style={styles.uxjTSOXq}>Title</Text><TextInput style={styles.OJhIZYkw}></TextInput><Text style={styles.SPMGQgmK}>Body</Text><TextInput style={styles.cBJjmzTC}></TextInput><Text style={styles.pbUIzBKw}>Author</Text><TextInput style={styles.rNTEuKVc}></TextInput><Text style={styles.FbCwlETk}>Image</Text><TextInput style={styles.pJSFSYvC}></TextInput><View style={styles.ywIjYjOK}><Text style={styles.iHYojExH}>Save</Text></View></ScrollView>
+    }}><Text style={styles.uxjTSOXq}>Title</Text><TextInput style={styles.OJhIZYkw} value={localTitle}></TextInput><Text style={styles.SPMGQgmK}>Body</Text><TextInput style={styles.cBJjmzTC}></TextInput><Text style={styles.pbUIzBKw}>Author</Text><TextInput style={styles.rNTEuKVc}></TextInput><Text style={styles.FbCwlETk}>Image</Text><TextInput style={styles.pJSFSYvC}></TextInput><View style={styles.ywIjYjOK}><Text style={styles.iHYojExH}>Save</Text></View></ScrollView>
     </SafeAreaView>;
+  const [localTitle, setLocalTitle] = useState(article.title);
 };
 
 const styles = StyleSheet.create({
