@@ -1,22 +1,22 @@
-import axios from "axios"
+import axios from "axios";
 const articlesAPI = axios.create({
   baseURL: "https://app.botics.co/modules/articles",
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json"
   }
-})
+});
 export function articleList() {
-  return articlesAPI.get("/article/")
+  return articlesAPI.get("/article/");
 }
 export function articleRead(id) {
-  return articlesAPI.get(`/article/${id}/`)
+  return articlesAPI.get(`/article/${id}/`);
 }
 export function articleCreate(payload) {
-  return articlesAPI.post(`/article/${id}/`, payload)
+  return articlesAPI.post(`/article/${id}/`, payload);
 }
 export const api = {
   articleList,
   articleRead,
   articleCreate
-}
+};
