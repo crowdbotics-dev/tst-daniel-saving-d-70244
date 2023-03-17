@@ -1,7 +1,7 @@
 import { View } from "react-native"
 import { Text } from "react-native"
 import { TextInput } from "react-native"
-import React from "react"
+import React, { useState } from "react"
 import { StyleSheet, ScrollView, SafeAreaView } from "react-native"
 
 const Untitled1 = () => {
