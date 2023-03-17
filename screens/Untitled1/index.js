@@ -1,9 +1,13 @@
+import { articleList } from "../../modules/articles/store/index.js";
+import { useDispatch } from "react-redux";
+import { Pressable } from "react-native";
 import { Text } from "react-native";
 import { TextInput } from "react-native";
 import React from "react";
 import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
 
 const Untitled1 = () => {
+  const dispatch = useDispatch();
   return <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={{
       backgroundColor: "#f0f0f1",
@@ -20,8 +24,17 @@ const Untitled1 = () => {
         <Text style={styles.FbCwlETk}>Image</Text>
         <TextInput style={styles.pJSFSYvC}></TextInput>
         
-      <Text style={styles.guafnFOE}>Save</Text></ScrollView>
+      <Pressable><Pressable onPress={onSubmit}><Text style={styles.guafnFOE}>Save</Text></Pressable></Pressable></ScrollView>
     </SafeAreaView>;
+
+  const onSubmit = () => {
+    dispatch(articleList({
+      title: localTitle,
+      body,
+      author,
+      image
+    }));
+  };
 };
 
 const styles = StyleSheet.create({
