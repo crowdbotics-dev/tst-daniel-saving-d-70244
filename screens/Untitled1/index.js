@@ -3,7 +3,7 @@ import { TextInput } from "react-native";
 import React from "react";
 import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
 
-const Untitled1 = () => {
+const CreateArticle = () => {
   return <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={{
       backgroundColor: "#f0f0f1",
@@ -114,4 +114,4 @@ const styles = StyleSheet.create({
     textAlign: "center"
   }
 });
-export default Untitled1;
+export default CreateArticle;
