@@ -1,9 +1,11 @@
+import React, { useContext } from "react";
 import { Text } from "react-native";
 import { TextInput } from "react-native";
-import React from "react";
 import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
+import { OptionsContext } from "@options";
 
 const CreateArticle = () => {
+  const options = useContext(OptionsContext);
   return <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={{
       backgroundColor: "#f0f0f1",
@@ -11,7 +13,7 @@ const CreateArticle = () => {
       position: "relative",
       flex: 1
     }}>
-        <Text style={styles.uxjTSOXq}>Title</Text>
+        <Text style={styles.uxjTSOXq}>Title{options.some}</Text>
         <TextInput style={styles.OJhIZYkw}></TextInput>
         <Text style={styles.SPMGQgmK}>Body</Text>
         <TextInput style={styles.cBJjmzTC}></TextInput>
@@ -19,8 +21,9 @@ const CreateArticle = () => {
         <TextInput style={styles.rNTEuKVc}></TextInput>
         <Text style={styles.FbCwlETk}>Image</Text>
         <TextInput style={styles.pJSFSYvC}></TextInput>
-        
-      <Text style={styles.guafnFOE}>Save</Text></ScrollView>
+
+        <Text style={styles.guafnFOE}>Save</Text>
+      </ScrollView>
     </SafeAreaView>;
 };
 
