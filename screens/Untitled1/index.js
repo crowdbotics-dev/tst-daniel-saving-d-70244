@@ -1,18 +1,21 @@
-import React, { useContext } from "react";
-import { Text } from "react-native";
-import { TextInput } from "react-native";
-import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
-import { OptionsContext } from "@options";
+import React, { useContext } from "react"
+import { Text } from "react-native"
+import { TextInput } from "react-native"
+import { StyleSheet, ScrollView, SafeAreaView } from "react-native"
+import { OptionsContext } from "@options"
 
 const CreateArticle = () => {
-  const options = useContext(OptionsContext);
-  return <SafeAreaView style={styles.safeArea}>
-      <ScrollView contentContainerStyle={{
-      backgroundColor: "#f0f0f1",
-      padding: 10,
-      position: "relative",
-      flex: 1
-    }}>
+  const options = useContext(OptionsContext)
+  return (
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView
+        contentContainerStyle={{
+          backgroundColor: "#f0f0f1",
+          padding: 10,
+          position: "relative",
+          flex: 1
+        }}
+      >
         <Text style={styles.uxjTSOXq}>Title{options.some}</Text>
         <TextInput style={styles.OJhIZYkw}></TextInput>
         <Text style={styles.SPMGQgmK}>Body</Text>
@@ -24,10 +27,11 @@ const CreateArticle = () => {
 
         <Text style={styles.guafnFOE}>Save</Text>
       </ScrollView>
-    </SafeAreaView>;
-};
+    </SafeAreaView>
+  )
+}
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   safeArea: {
     height: "100%"
   },
@@ -116,5 +120,5 @@ const styles = StyleSheet.create({
     borderRadius: 0,
     textAlign: "center"
   }
-});
-export default CreateArticle;
+})
+export default CreateArticle
