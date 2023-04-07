@@ -4,8 +4,8 @@ import { styles } from "../Untitled1";
 
 const BlankScreen3354 = () => {
   return <View style={_styles.BlankScreen3354}>
-      <Text style={styles.FbCwlETk}>oi</Text>
-    </View>;
+      <Text style={styles.FbCwlETk}>Imported Styles</Text>
+    <Text style={_styles.EyOnXfVE}>Local Styles</Text></View>;
 };
 
 export default BlankScreen3354;
@@ -16,5 +16,13 @@ const _styles = StyleSheet.create({
     padding: 10,
     position: "relative",
     height: "100%"
+  },
+  EyOnXfVE: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0,
+    color: "#0f26ed"
   }
 });
