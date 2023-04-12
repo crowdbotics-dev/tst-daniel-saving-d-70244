@@ -1,3 +1,5 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useContext } from "react";
 import { Text } from "react-native";
 import { TextInput } from "react-native";
@@ -5,6 +7,7 @@ import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
 import { OptionsContext } from "@options";
 
 const CreateArticle = () => {
+  const navigation = useNavigation();
   const options = useContext(OptionsContext);
   return <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={{
@@ -22,7 +25,11 @@ const CreateArticle = () => {
         <Text style={styles.FbCwlETk}>Image</Text>
         <TextInput style={styles.pJSFSYvC}></TextInput>
 
-        <Text style={styles.guafnFOE}>Save</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("BlankScreen3354", {
+          fs: "fs"
+        });
+      }}><Text style={styles.guafnFOE}>Save</Text></Pressable>
       </ScrollView>
     </SafeAreaView>;
 };
