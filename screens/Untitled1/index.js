@@ -26,7 +26,7 @@ const CreateArticle = () => {
         <Text style={styles.uxjTSOXq}>Title{options.some}</Text>
         <TextInput style={styles.OJhIZYkw} value={localTitle}></TextInput>
         <Text style={styles.SPMGQgmK}>Body</Text>
-        <TextInput style={styles.cBJjmzTC} value={localBody}></TextInput>
+        <TextInput style={styles.cBJjmzTC} value="a"></TextInput>
         <Text style={styles.pbUIzBKw}>Author</Text>
         <TextInput style={styles.rNTEuKVc}></TextInput>
         <Text style={styles.FbCwlETk}>Image</Text>
