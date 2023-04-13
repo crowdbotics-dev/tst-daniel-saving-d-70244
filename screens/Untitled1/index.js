@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import { Pressable } from "react-native";
 import React, { useContext } from "react";
@@ -7,8 +9,13 @@ import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
 import { OptionsContext } from "@options";
 
 const CreateArticle = () => {
+  const {
+    entities: article
+  } = useSelector(state => state.article);
   const navigation = useNavigation();
   const options = useContext(OptionsContext);
+  const [localTitle, setLocalTitle] = useState(article.title);
+  const [localBody, setLocalBody] = useState(article.body);
   return <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={{
       backgroundColor: "#f0f0f1",
@@ -17,9 +24,9 @@ const CreateArticle = () => {
       flex: 1
     }}>
         <Text style={styles.uxjTSOXq}>Title{options.some}</Text>
-        <TextInput style={styles.OJhIZYkw}></TextInput>
+        <TextInput style={styles.OJhIZYkw} value={localTitle}></TextInput>
         <Text style={styles.SPMGQgmK}>Body</Text>
-        <TextInput style={styles.cBJjmzTC}></TextInput>
+        <TextInput style={styles.cBJjmzTC} value={localBody}></TextInput>
         <Text style={styles.pbUIzBKw}>Author</Text>
         <TextInput style={styles.rNTEuKVc}></TextInput>
         <Text style={styles.FbCwlETk}>Image</Text>
@@ -29,7 +36,9 @@ const CreateArticle = () => {
         navigation.navigate("BlankScreen3354", {
           fs: "fs"
         });
-      }}><Text style={styles.guafnFOE}>Save</Text></Pressable>
+      }}>
+          <Text style={styles.guafnFOE}>Save</Text>
+        </Pressable>
       </ScrollView>
     </SafeAreaView>;
 };
