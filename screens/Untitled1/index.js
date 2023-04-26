@@ -1,3 +1,6 @@
+import { articleCreate } from "../../modules/articles/store/index.js";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
@@ -9,6 +12,13 @@ import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
 import { OptionsContext } from "@options";
 
 const CreateArticle = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(articleCreate({
+      fsfs: "fsfs",
+      fsfsxx: "fsfsxx"
+    }));
+  }, []);
   const {
     entities: article
   } = useSelector(state => state.article);
