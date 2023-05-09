@@ -2,13 +2,13 @@
 set -o pipefail
 
 mkdir configs/
-cat << EOF > configs/generated_config.yml
+cat <<EOF >configs/generated_config.yml
 version: 2.1
 jobs:
   node:
     working_directory: ~/build
     docker:
-      - image: cimg/node:14.19
+      - image: cimg/node:18.16.0
     steps:
       - checkout
 
@@ -42,7 +42,8 @@ jobs:
 
   ios:
     macos:
-      xcode: "13.0.0"
+      xcode: "14.1.0"
+    resource_class: macos.m1.large.gen1
     working_directory: ~/build
 
     # use a --login shell so our "set Ruby version" command gets picked up for later steps
@@ -61,10 +62,6 @@ jobs:
             if [ "$HAS_PAID_PLAN" != 1 ]; then
               exit 1
             fi
-
-      - run:
-          name: set Ruby version
-          command: echo "ruby-2.5" > ~/.ruby-version
 
       - restore_cache:
           key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}

@@ -2,13 +2,13 @@
 set -o pipefail
 
 mkdir configs/
-cat << EOF > configs/generated_config.yml
+cat <<EOF >configs/generated_config.yml
 version: 2.1
 jobs:
   node:
     working_directory: ~/build
     docker:
-      - image: cimg/node:14.19
+      - image: cimg/node:18.16.0
     steps:
       - checkout
 
@@ -57,7 +57,7 @@ jobs:
   android:
     working_directory: ~/build
     docker:
-      - image: reactnativecommunity/react-native-android:5.4
+      - image: reactnativecommunity/react-native-android:6.2
     resource_class: "medium+"
     environment:
       - TERM: "dumb"
