@@ -6,7 +6,6 @@ export const globalOptions = {
 };
 export const modulesOptions = {
   "@modules/app-menu": {
-    "title": "App Menus",
-    "copy": "Routes available"
+    "copy": "Routes available!"
   }
 };
