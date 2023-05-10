@@ -1,6 +1,14 @@
 {
   "scaffold": {
     "type": "react-native",
-    "version": "1.1.0"
+    "version": "2.0.0",
+    "cookiecutter_context": {
+      "project_name": "tst-daniel-saving-data",
+      "project_slug": "tst_daniel_saving_d_70244",
+      "project_dash_slug": "tst-daniel-saving-d-70244",
+      "project_description": "",
+      "owner_email": "",
+      "ssh_key_fingerprint": "c5:bd:6d:0b:a1:39:97:83:ca:b5:13:59:14:ff:49:40"
+    }
   }
 }
