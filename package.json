@@ -12,7 +12,6 @@
     "web:build": "./node_modules/.bin/webpack --config ./webpack.config.js --color --mode production"
   },
   "dependencies": {
-    "@modules/articles": "file:./modules/articles/",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/stack": "^6.3.16",
@@ -25,7 +24,6 @@
     "react-native-elements": "^3.4.3",
     "react-native-gesture-handler": "^2.9.0",
     "react-native-radio-buttons-group": "^2.3.2",
-    "react-native-reanimated": "^3.1.0",
     "react-native-responsive-screen": "^1.4.2",
     "react-native-safe-area-context": "^4.5.2",
     "react-native-screens": "^3.20.0",
@@ -64,11 +62,7 @@
     "preset": "react-native"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
